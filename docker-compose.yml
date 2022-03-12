@@ -1,0 +1,13 @@
+# docker-compose.yml
+
+version: '3'
+services:
+  emsdk:
+    image: emsdk:wasm
+    container_name: emsdk
+    build:
+      context: "./wasm"
+      dockerfile: "Dockerfile"
+    privileged: true
+    volumes:
+      - "$PWD/wasm/src:/src"
